@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App name</string>
+
+    <!--Common Message-->
+    <string name="failure_network_connection">No Network Connection.</string>
+    <string name="failure_server_error">Server Error</string>
+
+</resources>

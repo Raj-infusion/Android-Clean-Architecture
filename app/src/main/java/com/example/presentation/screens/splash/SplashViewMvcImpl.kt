@@ -1,6 +1,5 @@
 package com.example.presentation.screens.splash
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.Nullable
@@ -9,11 +8,9 @@ import com.bumptech.glide.Glide
 import com.example.R
 import com.example.presentation.common.views.BaseViewMvc
 
-class SplashViewMvcImpl(inflater: LayoutInflater, @Nullable parent: ViewGroup?) : BaseViewMvc(), SplashViewMvc {
+class SplashViewMvcImpl(inflater: LayoutInflater, @Nullable parent: ViewGroup?) : BaseViewMvc(),
+    SplashViewMvc {
 
-    companion object {
-        private const val GIF_URL_STRING = "file:///android_asset/gifs/Logo.gif"
-    }
 
     private val mLogoIv: AppCompatImageView
 
@@ -26,7 +23,7 @@ class SplashViewMvcImpl(inflater: LayoutInflater, @Nullable parent: ViewGroup?) 
         val context = getContext()
         if (context != null) {
             Glide.with(context)
-                .load(Uri.parse(GIF_URL_STRING))
+                .load(R.drawable.ic_launcher_background)
                 .into(mLogoIv)
         }
     }

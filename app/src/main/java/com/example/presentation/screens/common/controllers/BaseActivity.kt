@@ -8,6 +8,7 @@ import com.example.di.presentation.PresentationComponent
 import com.example.di.presentation.PresentationModule
 import android.view.WindowManager
 import androidx.annotation.UiThread
+import com.example.presentation.common.dialogs.ProgressBarDialogFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -56,6 +57,19 @@ abstract class BaseActivity : AppCompatActivity() {
         // To clear all pending job when activity destroyed.
         onCleared()
 
+    }
+
+    fun showProgressDialog() {
+        ProgressBarDialogFragment.show(supportFragmentManager)
+    }
+
+    fun hideProgressDialog() {
+        ProgressBarDialogFragment.hide(supportFragmentManager)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        hideProgressDialog()
     }
 
 }

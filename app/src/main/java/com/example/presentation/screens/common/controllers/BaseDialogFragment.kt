@@ -8,7 +8,7 @@ import com.example.di.application.ApplicationComponent
 import com.example.di.presentation.PresentationComponent
 import com.example.di.presentation.PresentationModule
 
-class BaseDialogFragment : DialogFragment() {
+abstract class BaseDialogFragment : DialogFragment() {
     var mIsInjectOrUsed = false
 
     private fun getApplicationComponent(): ApplicationComponent {
